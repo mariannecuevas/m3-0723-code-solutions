@@ -5,7 +5,7 @@
 import f1 from '/foo/bar/baz/qux';
 
 // import from a file named `foo.json` located in the current directory:
-import f2 from './../foo';
+import f2 from './src/foo';
 
 // import from a file named `bar.js` located in the parent directory:
 import f3 from '../bar';
