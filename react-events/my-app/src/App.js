@@ -1,15 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
-function CustomButton({ text, color, onCustomClick }) {
-  return (
-    <button
-      onClick={() => onCustomClick(text)}
-      style={{ backgroundColor: color }}>
-      {text}
-    </button>
-  );
-}
+import CustomButton from './CustomButton';
 
 function App() {
   function handleCustomClick(text) {
