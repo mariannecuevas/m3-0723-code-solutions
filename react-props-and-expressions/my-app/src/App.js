@@ -1,14 +1,5 @@
 import './App.css';
-
-function CustomButton(props) {
-  const { text, color } = props;
-
-  const style = {
-    backgroundColor: color,
-  };
-
-  return <button style={style}>{text}</button>;
-}
+import CustomButton from './CustomButton.js';
 
 function App() {
   return (
