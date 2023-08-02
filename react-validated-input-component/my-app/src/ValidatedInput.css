@@ -1,0 +1,18 @@
+form {
+  margin: 15px;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+}
+
+i.fa-xmark {
+  margin-left: 10px;
+  color: red;
+}
+
+i.fa-check {
+  margin-left: 10px;
+  color: green;
+}
