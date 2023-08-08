@@ -6,19 +6,14 @@
 .carousel {
   position: relative;
   height: 500px;
-  max-width: 750px;
+  max-width: 650px;
   margin: 0 auto;
-}
-
-img {
-  width: 375px;
-  height: 500px;
-  margin: 0 auto;
-  object-fit: contain;
 }
 
 .carousel-container {
   position: relative;
+  overflow: hidden;
+  height: 100%;
 }
 
 .carousel-track {
@@ -27,21 +22,21 @@ img {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 100%;
+  transition: transform 0.3s ease-in-out;
 }
 
 .slide {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
+  flex: 0 0 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.current-image {
+  width: 250px;
+  height: 325px;
+  object-fit: contain;
 }
 
 .btn {
@@ -53,7 +48,7 @@ img {
   transform: translateY(-50%);
 }
 
-.arrow-icon {
+.icon {
   cursor: pointer;
   font-size: 40px;
   margin: 15px;
