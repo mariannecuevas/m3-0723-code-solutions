@@ -61,3 +61,23 @@
 .right {
   right: -40px;
 }
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.indicator {
+  cursor: pointer;
+  border: solid black;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  margin: 0 5px;
+}
+
+.indicator.active {
+  background-color: black;
+}

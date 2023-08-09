@@ -7,23 +7,22 @@ export default function Carousel({ images }) {
 
   const goToPrevSlide = () => {
     clearInterval(timer);
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex((currentIndex - 1 + images.length) % images.length);
   };
 
   const goToNextSlide = () => {
     clearInterval(timer);
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((currentIndex + 1) % images.length);
+  };
+
+  const handleIndicator = (index) => {
+    clearInterval(timer);
+    setCurrentIndex(index);
   };
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
+      setCurrentIndex((currentIndex + 1) % images.length);
     }, 3000);
 
     return () => clearInterval(timer);
@@ -48,6 +47,14 @@ export default function Carousel({ images }) {
       <button className="btn right" onClick={goToNextSlide}>
         <FaChevronRight className="icon" />
       </button>
+      <div className="indicators">
+        {images.map((img, index) => (
+          <div
+            className={`indicator ${currentIndex === index ? 'active' : ''}`}
+            key={index}
+            onClick={() => handleIndicator(index)}></div>
+        ))}
+      </div>
     </div>
   );
 }
